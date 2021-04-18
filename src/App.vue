@@ -10,10 +10,6 @@
 		<Play :musicid="musicid" v-show="isplayshow"></Play>
 	</transition>
 	<div class="div" v-show="isdivshow"></div>
-	<p ref="zhuye" class="zhuye">
-		<span ref="xsyc" @click="xsyc" class="s1 iconfont icon-zuojiantou"></span>
-		<span @click="zytz" class="s2 iconfont icon-zhuye"></span>
-	</p>
   </div>
 </template>
 
@@ -39,22 +35,6 @@
 			})
 		},
 		methods:{
-			xsyc(){
-				if(this.flag){
-					this.$refs.zhuye.style.marginRight="-3.4375rem";
-					this.$refs.xsyc.className="s1 iconfont icon-zuojiantou";
-					this.flag=false;
-				}else{
-					this.$refs.zhuye.style.marginRight="0px";
-					this.$refs.xsyc.className="s1 iconfont icon-arrow-right";
-					this.flag=true;
-				}
-			},
-			zytz(){
-				this.$router.push("/");
-				this.$refs.zhuye.style.marginRight="-3.4375rem";
-				this.$refs.xsyc.className="s1 iconfont icon-zuojiantou";
-			}
 		}
 	}
 </script>
@@ -71,25 +51,6 @@
 	.div{
 		width: 100%;
 		height: 3.125rem;
-	}
-	.zhuye{
-		position: fixed;
-		width: 4.375rem;
-		top: 70%;
-		right: 4%;
-		margin-right: -3.4375rem;
-		z-index: 3;
-		transition: all 0.5s linear;
-		span{
-			font-size: 2.0625rem;
-		}
-		.s1{
-			color: #999;
-			margin-right: 0.4375rem;
-		}
-		.s2{
-			color: #dd001b;
-		}
 	}
 }
 </style>
